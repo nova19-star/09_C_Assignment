@@ -1,23 +1,36 @@
-// 4. Write a C program to display the pyramid using star (*) symbol.
+// 3. Write a C program to using Array to delete an element.
+
 #include <stdio.h>
 
 int main() {
-    int i, j, n;
+    int x[10], i, j, n, element;
 
-    printf("Enter the number of rows for the pyramid: ");
+    printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
 
-    for(i = 1; i <= n; i++) {
-        for(j = 1; j <= n - i; j++) {
-            printf(" ");
-        }
-
-        for(j = 1; j <= (2*i - 1); j++) {
-            printf("*");
-        }
-
-        printf("\n");
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", & x[i]);
     }
+
+    printf("Enter the element to delete: ");
+    scanf("%d", &element);
+
+    for(i = 0; i < n; i++) {
+        if(x[i] == element) {
+            for(j = i; j < n - 1; j++) {
+                x[j] = x[j + 1];
+            }
+            n--; // Reduce the size of the array
+            break;
+        }
+    }
+
+    printf("Array after deletion:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", x[i]);
+    }
+    printf("\n");
 
     return 0;
 }
