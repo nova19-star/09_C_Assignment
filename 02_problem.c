@@ -1,4 +1,4 @@
-// 1. write a C program to insert an element in an Array and display it.
+// 2. write a C program to insert an element in an Array and display it.
 
 #include <stdio.h>
 
